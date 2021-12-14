@@ -7,7 +7,7 @@ interface Location {
   country_name: string;
   region: string;
   city: string;
-  timezone: string;
+  country_code: string;
   country_calling_code: string;
   currency_name: string;
   org: string;

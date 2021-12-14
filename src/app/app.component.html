@@ -22,8 +22,8 @@
            <td>{{city}}</td>
          </tr>
          <tr class="odd">
-           <th>Time Zone</th>
-           <td>{{timeZone}}</td>
+           <th>Country Code</th>
+           <td>{{country_code}}</td>
          </tr>
          <tr class="even">
            <th>Calling Code</th>
@@ -51,11 +51,11 @@
           <input type="text" class="form__field" placeholder="Enter Ip address"
                  name="name" id='name' [(ngModel)]="inputValue" required />
           <label for="name" class="form__label">Enter Ip address</label>
-          <button id="button" (click)="getLocation()">Get Location</button>
+          <button id="button" (click)="getLocation()"><b>Get Location</b></button>
         </div>
       </div>
       <div class="card_image"> <img src="assets/globalisation-g347b14ac5_1920.jpg" /> </div>
-      <div class="ip_info" *ngIf="searched">
+      <div class="ip_info" *ngIf="isCalled">
         <table class="info_card">
           <tbody>
           <tr class="even">
@@ -71,8 +71,8 @@
             <td>{{ip_city}}</td>
           </tr>
           <tr class="odd">
-            <th>Time Zone</th>
-            <td>{{ip_timeZone}}</td>
+            <th>Country Code</th>
+            <td>{{ip_country_code}}</td>
           </tr>
           <tr class="even">
             <th>Calling Code</th>

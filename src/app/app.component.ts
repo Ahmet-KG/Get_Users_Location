@@ -15,7 +15,7 @@ export class AppComponent implements OnInit{
   country: string = '';
   region: string = '';
   city: string = '';
-  timeZone: string = '';
+  country_code: string = '';
   callingCode: string = '';
   currency: string = '';
   org: string = '';
@@ -23,13 +23,13 @@ export class AppComponent implements OnInit{
   ip_country: string = '';
   ip_region: string = '';
   ip_city: string = '';
-  ip_timeZone: string = '';
+  ip_country_code: string = '';
   ip_callingCode: string = '';
   ip_currency: string = '';
   ip_org: string = '';
 
 
-  searched: boolean = false;
+  isCalled: boolean = false;
   location!: any;
 
   constructor(private map: MapsService) {}
@@ -42,7 +42,7 @@ export class AppComponent implements OnInit{
       this.country = data.country_name;
       this.region = data.region;
       this.city = data.city;
-      this.timeZone = data.timezone;
+      this.country_code = data.country_code;
       this.callingCode = data.country_calling_code;
       this.currency = data.currency_name;
       this.org = data.org
@@ -70,12 +70,12 @@ export class AppComponent implements OnInit{
       this.ip_country = data.country_name;
       this.ip_region = data.region;
       this.ip_city = data.city;
-      this.ip_timeZone = data.timezone;
+      this.ip_country_code = data.country_code;
       this.ip_callingCode = data.country_calling_code;
       this.ip_currency = data.currency_name;
       this.ip_org = data.org
 
-      this.searched = true
+      this.isCalled = true
     })
   }
 }
