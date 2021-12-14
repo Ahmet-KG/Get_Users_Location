@@ -4,6 +4,13 @@ import {HttpClient} from "@angular/common/http";
 interface Location {
   latitude: string;
   longitude: string;
+  country_name: string;
+  region: string;
+  city: string;
+  timezone: string;
+  country_calling_code: string;
+  currency_name: string;
+  org: string;
 }
 
 @Injectable({

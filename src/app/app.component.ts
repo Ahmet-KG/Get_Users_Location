@@ -12,7 +12,24 @@ export class AppComponent implements OnInit{
   lat: string = '';
   lng: string = '';
   inputValue: string = '';
+  country: string = '';
+  region: string = '';
+  city: string = '';
+  timeZone: string = '';
+  callingCode: string = '';
+  currency: string = '';
+  org: string = '';
 
+  ip_country: string = '';
+  ip_region: string = '';
+  ip_city: string = '';
+  ip_timeZone: string = '';
+  ip_callingCode: string = '';
+  ip_currency: string = '';
+  ip_org: string = '';
+
+
+  searched: boolean = false;
   location!: any;
 
   constructor(private map: MapsService) {}
@@ -22,6 +39,13 @@ export class AppComponent implements OnInit{
       console.log(data);
       this.lat = data.latitude;
       this.lng = data.longitude;
+      this.country = data.country_name;
+      this.region = data.region;
+      this.city = data.city;
+      this.timeZone = data.timezone;
+      this.callingCode = data.country_calling_code;
+      this.currency = data.currency_name;
+      this.org = data.org
       const latLong = [data.latitude, data.longitude]
 
       let map = L.map('map').setView(latLong, 13);
@@ -43,6 +67,15 @@ export class AppComponent implements OnInit{
   getLocation() {
     this.map.getLocationByIp(this.inputValue).subscribe(data => {
       console.log(data);
+      this.ip_country = data.country_name;
+      this.ip_region = data.region;
+      this.ip_city = data.city;
+      this.ip_timeZone = data.timezone;
+      this.ip_callingCode = data.country_calling_code;
+      this.ip_currency = data.currency_name;
+      this.ip_org = data.org
+
+      this.searched = true
     })
   }
 }
